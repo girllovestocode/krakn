@@ -41,8 +41,13 @@ module.exports = function (grunt) {
         }
       },
       jsTest: {
-        files: ['test/spec/{,*/}*.js'],
+        files: ['test/unit/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
+      },
+
+      protractor: {
+        files: ['app/js/**/*.js', 'test/e2e/*.js'],
+        tasks: ['protractor:continuous']
       },
       compass: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
@@ -114,6 +119,32 @@ module.exports = function (grunt) {
       }
     },
 
+  protractor: {
+    options: {
+      // Location of your protractor config file
+      configFile: "test/spec/e2e/protractor-conf.js",
+   
+      // Do you want the output to use fun colors?
+      noColor: false,
+   
+      // Set to true if you would like to use the Protractor command line debugging tool
+      // debug: true,
+   
+      // Additional arguments that are passed to the webdriver command
+      args: { }
+    },
+    e2e: {
+      options: {
+        // Stops Grunt process if a test fails
+        keepAlive: false
+      }
+    },
+    continuous: {
+      options: {
+        keepAlive: true
+      }
+    }
+  },
     // Make sure code styles are up to par and there are no obvious mistakes
     jshint: {
       options: {
@@ -474,4 +505,9 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+  grunt.registerTask('e2e-test', ['connect:test', 'protractor:e2e']);
+
+  
+ 
+grunt.loadNpmTasks('grunt-contrib-connect');
 };
