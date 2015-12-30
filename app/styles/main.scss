@@ -3,6 +3,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+$green: #5cb85c;
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -88,4 +90,22 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+/*
+  section 
+*/
+
+.section {
+    border: 3px solid $green; 
+    padding: 2em 3em;
+    border-radius: 10px;
+    h3 {
+      color: $green;
+      margin-bottom: 1em;
+    }
+}
+
+#result {
+  margin-top: 1em;
 }
