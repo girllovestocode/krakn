@@ -25,13 +25,13 @@ describe('Controller: InteriorCtrl', function () {
   it('should calculate an paint needed of a room', function () {
     scope.room.widthFeet = 5;
     scope.room.heightFeet = 7;
-    expect(scope.calculatePaint()).toBe(.1);
+    expect(scope.calculatePaint()).toBe("0.10");
   });
   
   it('should calculate an paint needed of a room', function () {
     scope.room.widthFeet = 5;
     scope.room.heightFeet = 70;
-    expect(scope.calculatePaint()).toBe(1);
+    expect(scope.calculatePaint()).toBe("1.00");
   });
  
 });

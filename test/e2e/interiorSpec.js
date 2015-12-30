@@ -19,7 +19,7 @@ describe('estimate an interior room', function(){
         //350 sqft per gallon
         widthFeet.sendKeys(5);
         heightFeet.sendKeys(70);
-        expect(paint).toEqual(1);
+        expect(paint).toEqual(1.00);
     });
 
 
