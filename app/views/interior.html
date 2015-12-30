@@ -1,0 +1,36 @@
+<div class="section">
+    <div class="row">
+        <h3><i class="fa fa-home"></i> Property Details </h3>
+        <div class="col-md-6">
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon" id="sizing-addon1">Height</span>
+              <input type="text" class="form-control"  placeholder="feet" ng-model="room.heightFeet" >
+              <span class="input-group-addon">feet</span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-group input-group-lg">
+                 <span class="input-group-addon" id="sizing-addon1">Width</span>
+              <input type="text" class="form-control"  placeholder="feet" ng-model="room.widthFeet" >
+              <span class="input-group-addon">feet</span>  
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="result" ng-show="calculateArea() && calculatePaint()">
+        <div class="col-md-6">
+            <h4> Total Area </h4>
+            <div class="input-group input-group-lg" >
+              <input type="text" class="form-control" placeholder="Total area" ng-model="room.area" >
+              <span class="input-group-addon">sq.feet</span>
+            </div>
+        </div>
+         <div class="col-md-6">
+            <h4> Gallons / per Coat </h4>
+            <div class="input-group input-group-lg">
+              <input type="text" class="form-control" placeholder="Total paint" ng-model="room.paint" >
+              <span class="input-group-addon">gallon</span>
+            </div>
+        </div>
+    </div>
+</div>
